@@ -1,1 +1,1 @@
-include LICENSE CHANGES README.md flask_thumbnails/*.py
+include LICENSE CHANGES README.md admin_permissions/*.py

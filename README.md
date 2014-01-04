@@ -18,6 +18,8 @@ Install with ``pip``:
 
 Run ``pip install git+https://github.com/SilentSokolov/django-admin-permissions.git``
 
+Or ``pip install django-admin-permissions``
+
 Open ``settings.py`` and add ``admin_permissions`` to your ``INSTALLED_APPS``:
 
     INSTALLED_APPS = (
