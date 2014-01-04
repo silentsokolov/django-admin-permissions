@@ -1,5 +1,5 @@
 import unittest
-from .admin import ModelAdminPermission
+from admin_permissions.admin import ModelAdminPermission
 
 
 class AdminPermissionTest(unittest.TestCase):
