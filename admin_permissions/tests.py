@@ -1,8 +1,8 @@
-from django.test import TestCase
+import unittest
 from admin_permissions.admin import ModelAdminPermission
 
 
-class AdminPermissionTest(TestCase):
+class AdminPermissionTest(unittest.TestCase):
     def setUp(self):
         self.fieldsets = [
             ('General', {
