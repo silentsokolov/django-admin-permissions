@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='django-admin-permissions',
-    version='0.1',
+    version='0.2',
     url='https://github.com/SilentSokolov/django-admin-permissions',
     license='MIT',
     author='Dmitriy Sokolov',
@@ -13,6 +13,20 @@ setup(
     include_package_data=True,
     platforms='any',
     install_requires=[
-        'django>=1.5',
+        'django>=1.4',
+    ],
+    tests_require=['Django'],
+    test_suite='runtests.main',
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
+        'Environment :: Web Environment',
+        'Framework :: Django',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
+        'Topic :: Utilities',
     ],
 )
