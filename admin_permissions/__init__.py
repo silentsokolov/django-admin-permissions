@@ -1,1 +1,1 @@
-default_app_config = 'automatic_links.apps.AutomaticLinksConfig'
+default_app_config = 'admin_permissions.apps.AdminPermissionsConfig'
