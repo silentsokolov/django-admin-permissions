@@ -1,42 +1,23 @@
 #!/usr/bin/env python
-import sys
-from os import path
-from django.conf import settings
 
-if not settings.configured:
-    module_root = path.dirname(path.realpath(__file__))
+import django
 
-    settings.configure(
-        DEBUG=False,
-        DATABASES={
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': ':memory:'
-            }
-        },
+from django.conf import settings, global_settings
+from django.core.management import call_command
 
-        INSTALLED_APPS=(
-            'django.contrib.auth',
-            'django.contrib.contenttypes',
-            'django.contrib.sites',
-            'django.contrib.admin',
-            'django.contrib.sessions',
-            'admin_permissions',
-        ),
-        TEST_RUNNER='django.test.simple.DjangoTestSuiteRunner',
-    )
+settings.configure(
+    MIDDLEWARE_CLASSES=global_settings.MIDDLEWARE_CLASSES,
+    INSTALLED_APPS=global_settings.INSTALLED_APPS,
+    DATABASES={
+        'default': {'ENGINE': 'django.db.backends.sqlite3'}
+    }
+)
 
+from django.test.utils import setup_test_environment
+setup_test_environment()
 
-def main():
-    from django.test.utils import get_runner
-
-    TestRunner = get_runner(settings)
-
-    test_runner = TestRunner()
-
-    failures = test_runner.run_tests(('admin_permissions',))
-    sys.exit(failures)
-
+if django.VERSION > (1, 7):
+    django.setup()
 
 if __name__ == '__main__':
-    main()
+    call_command('test', 'admin_permissions')

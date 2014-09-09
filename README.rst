@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/SilentSokolov/django-admin-permissions.png?branch=master
-   :target: https://travis-ci.org/SilentSokolov/django-admin-permissions
+.. image:: https://travis-ci.org/silentsokolov/django-admin-permissions.png?branch=master
+   :target: https://travis-ci.org/silentsokolov/django-admin-permissions
 
 django-admin-permissions
 ========================

@@ -2,8 +2,8 @@ from distutils.core import setup
 
 setup(
     name='django-admin-permissions',
-    version='0.2',
-    url='https://github.com/SilentSokolov/django-admin-permissions',
+    version='0.2.1',
+    url='https://github.com/silentsokolov/django-admin-permissions',
     license='MIT',
     author='Dmitriy Sokolov',
     author_email='silentsokolov@gmail.com',
@@ -16,7 +16,6 @@ setup(
         'django>=1.4',
     ],
     tests_require=['Django'],
-    test_suite='runtests.main',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Development Status :: 5 - Production/Stable',
