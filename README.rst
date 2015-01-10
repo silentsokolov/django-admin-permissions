@@ -7,23 +7,25 @@ django-admin-permissions
 Very simple extension that adds a permissions check on the field in admin
 
 
+Requirements
+------------
+
+* Python 2.7+ or Python 3.2+
+* Django 1.4+
+
+
 Installation
 ------------
 
-Requires
-~~~~~~~~
+Use your favorite Python package manager to install the app from PyPI, e.g.
 
-::
+Example:
 
-    django >= 1.4
+``pip install django-admin-permissions``
 
-Install with ``pip``:
+Add ``admin_permissions`` to ``INSTALLED_APPS``:
 
-Run ``pip install git+https://github.com/SilentSokolov/django-admin-permissions.git``
-
-Or ``pip install django-automatic-links``
-
-Open ``settings.py`` and add ``automatic_links`` to your ``INSTALLED_APPS``:
+Example:
 
 .. code:: python
 
