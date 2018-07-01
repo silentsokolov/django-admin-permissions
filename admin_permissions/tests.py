@@ -1,4 +1,9 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+
 import unittest
+
 from admin_permissions.admin import ModelAdminPermission
 
 

@@ -1,3 +1,3 @@
-from django.db import models
+# -*- coding: utf-8 -*-
 
-# here
+from __future__ import unicode_literals

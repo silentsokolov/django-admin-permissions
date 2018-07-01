@@ -1,6 +1,10 @@
 .. image:: https://travis-ci.org/silentsokolov/django-admin-permissions.png?branch=master
    :target: https://travis-ci.org/silentsokolov/django-admin-permissions
 
+.. image:: https://codecov.io/gh/silentsokolov/django-admin-permissions/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/silentsokolov/django-admin-permissions
+
+
 django-admin-permissions
 ========================
 
@@ -10,8 +14,8 @@ Very simple extension that adds a permissions check on the field in admin
 Requirements
 ------------
 
-* Python 2.7+ or Python 3.2+
-* Django 1.4+
+* Python 2.7+ or Python 3.3+
+* Django 1.8+
 
 
 Installation

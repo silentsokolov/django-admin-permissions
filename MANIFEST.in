@@ -1,2 +1,4 @@
 include LICENSE CHANGES README.rst runtests.py
 recursive-include admin_permissions *.py
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
