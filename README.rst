@@ -1,4 +1,4 @@
-.. image:: https://travis-ci.org/silentsokolov/django-admin-permissions.png?branch=master
+.. image:: https://travis-ci.org/silentsokolov/django-admin-permissions.svg?branch=master
    :target: https://travis-ci.org/silentsokolov/django-admin-permissions
 
 .. image:: https://codecov.io/gh/silentsokolov/django-admin-permissions/branch/master/graph/badge.svg
