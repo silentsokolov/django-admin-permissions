@@ -14,7 +14,7 @@ class ModelAdminPermission(admin.ModelAdmin):
         fieldsets = super(ModelAdminPermission, self).get_fieldsets(request, obj)
 
         if not self.fields_permissions_read_only:
-            for permission, fields in self.fields_permissions.iteritems():
+            for permission, fields in self.fields_permissions.items():
                 if not request.user.has_perm(permission):
                     if isinstance(fields, (str, list)):
                         fields = (fields,)
@@ -26,7 +26,7 @@ class ModelAdminPermission(admin.ModelAdmin):
         fieldsets = super(ModelAdminPermission, self).get_readonly_fields(request, obj)
 
         if self.fields_permissions_read_only:
-            for permission, fields in self.fields_permissions.iteritems():
+            for permission, fields in self.fields_permissions.items():
                 if not request.user.has_perm(permission):
                     if isinstance(fields, (str, list)):
                         fields = (fields,)
