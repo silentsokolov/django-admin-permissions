@@ -1,8 +1,8 @@
-.. image:: https://travis-ci.org/silentsokolov/django-admin-permissions.svg?branch=master
-   :target: https://travis-ci.org/silentsokolov/django-admin-permissions
+.. image:: https://github.com/silentsokolov/django-admin-permissions/workflows/build/badge.svg?branch=master
+   :target: https://github.com/silentsokolov/django-admin-permissions/actions?query=workflow%3Abuild
 
 .. image:: https://codecov.io/gh/silentsokolov/django-admin-permissions/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/silentsokolov/django-admin-permissions
+   :target: https://codecov.io/gh/silentsokolov/django-admin-permissions
 
 
 django-admin-permissions
@@ -43,11 +43,14 @@ Example:
 Example usage
 -------------
 
-Use class ``ModelAdminPermission`` and set permissions using ``fields_permissions``:
+Use class ``FieldPermissionMixin`` and set permissions using ``fields_permissions``:
 
 .. code:: python
 
-    class ArticleAdmin(ModelAdminPermission):
+    from django.contrib import admin
+    from admin_permissions.admin import FieldPermissionMixin
+
+    class ArticleAdmin(FieldPermissionMixin, admin.ModelAdmin):
         fieldsets = [
             ('General', {
                 'fields': ['title', 'slug', 'text'],

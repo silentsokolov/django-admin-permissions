@@ -2,16 +2,14 @@
 
 from __future__ import unicode_literals
 
-from django.contrib import admin
 
-
-class ModelAdminPermission(admin.ModelAdmin):
+class FieldPermissionMixin(object):
     """Adds simple functionality to check the permissions for the fields"""
     fields_permissions = {}
     fields_permissions_read_only = False
 
     def get_fieldsets(self, request, obj=None):
-        fieldsets = super(ModelAdminPermission, self).get_fieldsets(request, obj)
+        fieldsets = super(FieldPermissionMixin, self).get_fieldsets(request, obj)
 
         if not self.fields_permissions_read_only:
             for permission, fields in self.fields_permissions.items():
@@ -23,7 +21,7 @@ class ModelAdminPermission(admin.ModelAdmin):
         return fieldsets
 
     def get_readonly_fields(self, request, obj=None):
-        fieldsets = super(ModelAdminPermission, self).get_readonly_fields(request, obj)
+        fieldsets = super(FieldPermissionMixin, self).get_readonly_fields(request, obj)
 
         if self.fields_permissions_read_only:
             for permission, fields in self.fields_permissions.items():

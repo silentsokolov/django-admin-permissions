@@ -9,7 +9,7 @@ from setuptools import setup
 
 def get_version(package):
     init_py = open(os.path.join(package, '__init__.py')).read()
-    return re.search("__version__ = ['\"]([^'\"]+)['\"]", init_py).group(1)
+    return re.search('__version__ = [\'"]([^\'"]+)[\'"]', init_py).group(1)
 
 
 def get_packages(package):
@@ -35,6 +35,7 @@ setup(
     url='https://github.com/silentsokolov/django-admin-permissions',
     license='MIT',
     description='Very simple extension that adds a permissions check on the field in admin',
+    long_description_content_type='text/x-rst',
     long_description=open(join(dirname(__file__), 'README.rst')).read(),
     author='Dmitriy Sokolov',
     author_email='silentsokolov@gmail.com',
@@ -59,6 +60,9 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Topic :: Utilities',
     ],
 )
