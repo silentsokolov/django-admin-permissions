@@ -1,4 +1,4 @@
-.. image:: https://github.com/silentsokolov/django-admin-permissions/workflows/build/badge.svg?branch=master
+.. image:: https://github.com/silentsokolov/django-admin-permissions/actions/workflows/build.yml/badge.svg?branch=master
    :target: https://github.com/silentsokolov/django-admin-permissions/actions?query=workflow%3Abuild
 
 .. image:: https://codecov.io/gh/silentsokolov/django-admin-permissions/branch/master/graph/badge.svg
@@ -49,6 +49,7 @@ Use class ``FieldPermissionMixin`` and set permissions using ``fields_permission
 
     from django.contrib import admin
     from admin_permissions.admin import FieldPermissionMixin
+
 
     class ArticleAdmin(FieldPermissionMixin, admin.ModelAdmin):
         fieldsets = [
