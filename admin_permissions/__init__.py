@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 import django
 
 __author__ = 'Dmitriy Sokolov'
-__version__ = '0.2.2'
+__version__ = '1.0.0'
 
 
 if django.VERSION < (3, 2):
