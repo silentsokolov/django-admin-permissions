@@ -66,6 +66,14 @@ Use class ``FieldPermissionMixin`` and set permissions using ``fields_permission
             'articles.can_change_admin_seo_fields': ('seo_title', 'seo_description'),
         }
 
+    # in articles/models.py:
+    class Article(models.Model):
+        class Meta:
+            permissions = (
+                ('can_change_admin_seo_fields', _('Show SEO fields')),
+            )
+
+Then run makemigrations to add all the permissions in your database
 
 Options
 ~~~~~~~
