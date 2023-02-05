@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+from copy import deepcopy
 
 
 class FieldPermissionMixin(object):
@@ -12,6 +13,9 @@ class FieldPermissionMixin(object):
         fieldsets = super(FieldPermissionMixin, self).get_fieldsets(request, obj)
 
         if not self.fields_permissions_read_only:
+            # if formset was received by link we should make copy before removing fields
+            if getattr(self, 'fieldsets', None) is fieldsets:
+                fieldsets = deepcopy(fieldsets)
             for permission, fields in self.fields_permissions.items():
                 if not request.user.has_perm(permission):
                     if isinstance(fields, (str, list)):
