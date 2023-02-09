@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
 from copy import deepcopy
 
 
 class FieldPermissionMixin(object):
     """Adds simple functionality to check the permissions for the fields"""
-    fields_permissions = {}
+
+    fields_permissions = {}  # type: ignore
     fields_permissions_read_only = False
 
     def get_fieldsets(self, request, obj=None):
@@ -14,7 +14,7 @@ class FieldPermissionMixin(object):
 
         if not self.fields_permissions_read_only:
             # if formset was received by link we should make copy before removing fields
-            if getattr(self, 'fieldsets', None) is fieldsets:
+            if getattr(self, "fieldsets", None) is fieldsets:
                 fieldsets = deepcopy(fieldsets)
             for permission, fields in self.fields_permissions.items():
                 if not request.user.has_perm(permission):
@@ -44,7 +44,7 @@ class FieldPermissionMixin(object):
         Returns the modified fieldsets
         """
         for count, fs in enumerate(fieldsets):
-            fs[1]['fields'] = [field for field in fs[1]['fields'] if field not in remove_fields]
-            if not fs[1]['fields']:
+            fs[1]["fields"] = [field for field in fs[1]["fields"] if field not in remove_fields]
+            if not fs[1]["fields"]:
                 fieldsets.pop(count)
         return fieldsets

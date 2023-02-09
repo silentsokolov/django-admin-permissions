@@ -1,4 +1,4 @@
-include LICENSE CHANGES README.rst runtests.py
+include LICENSE CHANGES README.rst
 recursive-include tests/* *
 global-exclude __pycache__
 global-exclude *.py[co]
