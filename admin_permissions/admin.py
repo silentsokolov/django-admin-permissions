@@ -25,16 +25,18 @@ class FieldPermissionMixin(object):
         return fieldsets
 
     def get_readonly_fields(self, request, obj=None):
-        fieldsets = super(FieldPermissionMixin, self).get_readonly_fields(request, obj)
+        readonly_fields = super(FieldPermissionMixin, self).get_readonly_fields(request, obj)
 
         if self.fields_permissions_read_only:
+            # we make a copy otherwise we risk mutating the base readonly_fields definition
+            readonly_fields = deepcopy(readonly_fields)
             for permission, fields in self.fields_permissions.items():
                 if not request.user.has_perm(permission):
                     if isinstance(fields, (str, list)):
                         fields = (fields,)
-                    fieldsets += fields
+                    readonly_fields += fields
 
-        return fieldsets
+        return readonly_fields
 
     @staticmethod
     def remove_fields(fieldsets, *remove_fields):
